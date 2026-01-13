@@ -4,7 +4,7 @@ Download the following files:
 
 * `underpass_detection.py`
 * `underpass_detection_main.py`
-* `test_export.json`
+* data/`test_export_1.json`
 
 Run the script as follows:
 
