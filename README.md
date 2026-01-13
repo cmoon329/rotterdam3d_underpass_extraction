@@ -9,7 +9,7 @@ Download the following files:
 Run the script as follows:
 
 ```bash
-python3 underpass_detection_main.py test_export.json --eps 20
+python3 underpass_detection_main.py data/test_export_1.json --eps 20
 ```
 
 ### Input Arguments
