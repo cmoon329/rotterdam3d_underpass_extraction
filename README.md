@@ -27,7 +27,7 @@ The script takes two input arguments:
 1. **A list of City Object IDs with Underpasses**: Printed to the terminal.
 2. **under_obj_eps_*(eps value)*.wkt**: WKT output containing merged roof and ground geometries and area differences for City Objects with underpasses. Load into QGIS for visualization.
 
-The followings are for code verification.
+The followings are for code verification. (remove the unnecessary parts)
 
 3. **A list of City Object IDs that have only roof surfaces and no ground surfaces**: Printed to the terminal.
 4. **ground_pre_union.wkt**: WKT output containing non-merged ground geometries.
