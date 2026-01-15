@@ -9,40 +9,25 @@ Download the following files:
 Run the script as follows:
 
 ```bash
-python3 underpass_detection_main.py data/test_export_1.json --eps 20
+python3 underpass_detection_main.py data/test_export_1.json
 ```
 
 ### Input Arguments
 
-The script takes two input arguments:
+The script takes one input arguments:
 
 1. **Input file**
    : A CityJSON file to be processed.
 
-2. **Epsilon threshold (`--eps`)**
-   : The minimum difference between roof and ground areas required to identify an underpass.
-   *(Default: `1e-8`)*
-
 ### Outputs
-1. **A list of City Object IDs with Underpasses**: Printed to the terminal.
-2. **under_obj_eps_*(eps value)*.wkt**: WKT output containing merged roof and ground geometries and area differences for City Objects with underpasses. Load into QGIS for visualization.
-
-The followings are for code verification. (remove the unnecessary parts)
-
-3. **A list of City Object IDs that have only roof surfaces and no ground surfaces**: Printed to the terminal.
-4. **ground_pre_union.wkt**: WKT output containing non-merged ground geometries.
-5. **roof_pre_union.wkt**: WKT output containing non-merged roof geometries.
-6. **ground_union.wkt**: WKT output containing merged ground geometries for each City Object.
-7. **roof_union.wkt**: WKT output containing merged roof geometries for each City Object.
+1. **underpass.shp**: SHP output containing merged Outer Ceiling Surfaces and their area for each City Object with underpasses. Load into QGIS for visualization.
 
 
 ## Test result 
 Following images are from a test run.
 
 * Area of Interest: Near the Rotterdam central library [(Google Map)](https://maps.app.goo.gl/Jbf8kTrSAJ9F8WbVA)
-* eps: 1e-8
-
-<img width="848" height="600" alt="underpass_obj" src="https://github.com/user-attachments/assets/4faf1b73-fab4-44e5-95dc-0526bd6e1a23" />
+<img width="848" height="600" alt="underpass_obj" src="https://github.com/user-attachments/assets/14e29245-640d-4e8e-823c-2fe0afa2dbb2" />
 
 ### <case 1> [(Google Map)](https://maps.app.goo.gl/fj1DfkWNB2VPPi8dA)
 <table>
