@@ -9,18 +9,20 @@ Download the following files:
 Run the script as follows:
 
 ```bash
-python3 underpass_detection_main.py data/test_export_1.json
+python3 underpass_detection_main.py data/test_export_1.json test_area_1
 ```
 
 ### Input Arguments
 
-The script takes one input arguments:
+The script takes two input arguments:
 
 1. **Input file**
-   : A CityJSON file to be processed.
+   : A CityJSON file to be processed
+2. **Output file name**
+   : An output file name without extension
 
 ### Outputs
-1. **underpass.shp**: SHP output containing merged Outer Ceiling Surfaces and their area for each City Object with underpasses. Load into QGIS for visualization.
+1. **SHP file**: A SHP file will be created in `/data` folder. The file contains merged Outer Ceiling Surfaces and their area for each City Object with underpasses. Load into QGIS for visualization.
 
 
 ## Test result 
