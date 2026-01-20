@@ -174,7 +174,7 @@ def output_shp(obj_ocs, ocs_bounds_coords, output_file_nm):
 
     with open(output_file_path, 'w', newline='') as output_csv:
         writer = csv.writer(output_csv)
-        writer.writerow(['uuid', 'area', 'geom'])
+        writer.writerow(['cityobj_id', 'area', 'geom'])
 
         for uuid, surfs in obj_ocs.items():
             # if City Object has no outer ceiling surfaces, skip
@@ -204,10 +204,9 @@ def output_shp(obj_ocs, ocs_bounds_coords, output_file_nm):
     df['geom'] = df['geom'].apply(shapely_wkt.loads)
     gdf = gpd.GeoDataFrame(df, geometry=df['geom'], crs='epsg:28992')
     gdf = gdf.drop(columns=['geom'])
-    gdf.to_file(f'{output_file_nm}.shp')
+    gdf.to_file(f'data/{output_file_nm}.shp')
 
     if os.path.exists(output_file_path):
         os.remove(output_file_path)
 
     print('shp file created')
-
