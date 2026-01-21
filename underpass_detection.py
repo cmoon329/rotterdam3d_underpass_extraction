@@ -37,10 +37,25 @@ def ocs_boundaries(input_data):
             smt_values = input_data['CityObjects'][i]['geometry'][0]['semantics']['values']
             smt_surfaces = input_data['CityObjects'][i]['geometry'][0]['semantics']['surfaces']
 
+            highest_floor = input_data['CityObjects'][i]['attributes'].get('HOOGSTE_BOUWLAAG')
+            lowest_floor = input_data['CityObjects'][i]['attributes'].get('LAAGSTE_BOUWLAAG')
+            measuredHeight = input_data['CityObjects'][i]['attributes'].get('measuredHeight')
+            
+            if highest_floor != None:
+                highest_floor = float(highest_floor)
+            if lowest_floor != None:
+                lowest_floor = float(lowest_floor)
+
             ocs_num = {}  # {outer_ceiling_surface_num: outer_ceiling_surface_id}
+
+            is_metro = ((highest_floor != None and highest_floor <= 0) \
+                        and (lowest_floor != None and lowest_floor < 0) \
+                        and (measuredHeight == None))
+            
             for num, surf in enumerate(smt_surfaces):
                 if surf['type'] == 'OuterCeilingSurface':
-                    ocs_num[num] = surf['id']
+                    if not is_metro:
+                        ocs_num[num] = surf['id']
 
             obj_ocs[i] = list(ocs_num.values())
 
