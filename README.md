@@ -41,7 +41,7 @@ Following images are from test runs.
 **Surfaces highlighted in green** represent **underpass** surfaces.
 | Area 1 | Area 2 | Area 3 |
 |----------|----------|----------|
-| <img width="400" alt="area_1_map" src="https://github.com/user-attachments/assets/f109b592-ec55-4e1a-b20b-96fd68c79d77" /> | <img width="400" alt="area_2_map" src="https://github.com/user-attachments/assets/14bb8b39-2cdc-47e3-8a52-e8af37b83de1" /> | <img width="400" alt="area_3_map" src="https://github.com/user-attachments/assets/88b41689-f13b-4939-aa88-7420e313bc08" /> |
+| <img width="400" alt="area_1_map" src="https://github.com/user-attachments/assets/f109b592-ec55-4e1a-b20b-96fd68c79d77" /> | <img width="400" alt="area_2_map" src="https://github.com/user-attachments/assets/14bb8b39-2cdc-47e3-8a52-e8af37b83de1" /> | <img width="400" alt="area_3_map" src="https://github.com/user-attachments/assets/30ebb328-948b-480d-9437-54583440c937" /> |
 
 **Example 1** [(Google Map)](https://maps.app.goo.gl/fj1DfkWNB2VPPi8dA)
 <table>
