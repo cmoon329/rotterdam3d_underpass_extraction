@@ -32,6 +32,7 @@ The script takes two input arguments:
 ### Notes
 **Generic attributes** must be included in the input dataset.
 Be sure to include them when downloading a new dataset from 3D Rotterdam.
+
 <img width="250" alt="Screenshot 2026-01-21 at 9 31 31 PM" src="https://github.com/user-attachments/assets/9ca2ee0a-6fa4-4455-8a2f-074819e57645" />
 
 
