@@ -9,7 +9,7 @@ Download the following files:
 Run the script as follows:
 
 ```bash
-python3 underpass_detection_main.py data/test_export_1.json test_area_1
+python3 underpass_detection_main.py data/area_1.json area_1_underpass
 ```
 
 ### Input Arguments
