@@ -29,6 +29,12 @@ The script takes two input arguments:
 * `area_2.json`: Near Maritime Museum [(Google Maps)](https://maps.app.goo.gl/m2ZSWcXNRb1PzAwg7)
 * `area_3.json`: Near Rotterdam central station [(Google Maps)](https://maps.app.goo.gl/LYL9RUEJYVvBS7YD9)
 
+### Notes
+**Generic attributes** must be included in the input dataset.
+Be sure to include them when downloading a new dataset from 3D Rotterdam.
+<img width="250" alt="Screenshot 2026-01-21 at 9 31 31 PM" src="https://github.com/user-attachments/assets/9ca2ee0a-6fa4-4455-8a2f-074819e57645" />
+
+
 ## Results
 Following images are from test runs.
 **Surfaces highlighted in green** represent **underpass** surfaces.
