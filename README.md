@@ -24,7 +24,7 @@ The script takes two input arguments:
 ### Outputs
 1. **SHP file**: A SHP file will be created in `/data` folder. The file contains merged Outer Ceiling Surfaces and their area for each City Object with underpasses. Load into QGIS for visualization.
 
-### Test datasets
+### Test Datasets
 * `area_1.json`: Near Rotterdam central library [(Google Maps)](https://maps.app.goo.gl/Jbf8kTrSAJ9F8WbVA)
 * `area_2.json`: Near Maritime Museum [(Google Maps)](https://maps.app.goo.gl/m2ZSWcXNRb1PzAwg7)
 * `area_3.json`: Near Rotterdam central station [(Google Maps)](https://maps.app.goo.gl/LYL9RUEJYVvBS7YD9)
