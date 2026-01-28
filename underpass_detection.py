@@ -208,7 +208,11 @@ def output_shp(obj_ocs, ocs_bounds_coords, output_file_nm):
                     poly = shapely_wkt.loads(ocs_bounds_wkts[surfs[i]])
                     polys.append(poly)
 
-                geom = shapely.unary_union(polys)  # merge surfaces
+                try:
+                    geom = shapely.unary_union(polys)  # merge surfaces
+                except shapely.errors.GEOSException as e:
+                    print(f"Warning: GEOSException for city object {uuid}: {e}. Skipping this object.")
+                    continue
 
             area = shapely.area(geom)
 
