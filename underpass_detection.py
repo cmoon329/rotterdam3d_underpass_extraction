@@ -47,7 +47,7 @@ def ocs_boundaries(input_data):
 
     # then extract outer ceiling surfaces and their boundaries, and measured heights of all city objects
     for i in cityobjs:
-        if len(input_data['CityObjects'][i]['geometry']) == 0 or input_data['CityObjects'][i]['type'] == "Building":
+        if len(input_data['CityObjects'][i]['geometry']) == 0:
             continue
         else:
             type = input_data['CityObjects'][i]['geometry'][0]['type']
@@ -59,7 +59,13 @@ def ocs_boundaries(input_data):
             lowest_floor = input_data['CityObjects'][i]['attributes'].get('LAAGSTE_BOUWLAAG')
             measuredHeight = input_data['CityObjects'][i]['attributes'].get('measuredHeight')
             parent = input_data['CityObjects'][i].get('parents')[0] if input_data['CityObjects'][i].get('parents') else None
-            elevation = elevation_per_building[parent] if parent and elevation_per_building.get(parent) else None
+            if parent:
+                elevation = elevation_per_building[parent] if parent and elevation_per_building.get(parent) else None
+            else:
+                geographicalExtent = input_data['CityObjects'][i].get('geographicalExtent')
+                elevation = None
+                if geographicalExtent and len(geographicalExtent) >= 6:
+                    elevation = geographicalExtent[2]  # 3rd value - minimum Z coordinate
             measuredHeights[i] = measuredHeight
             elevations[i] = elevation
             
