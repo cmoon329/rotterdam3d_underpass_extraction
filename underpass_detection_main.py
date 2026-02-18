@@ -20,7 +20,7 @@ def main():
         sys.exit()
 
     # 1) Create lists of outer ceiling surfaces per city object
-    obj_ocs, ocs_bounds = underpass_detection.ocs_boundaries(data)
+    obj_ocs, ocs_bounds, measuredHeights, elevations = underpass_detection.ocs_boundaries(data)
 
     # 2) Translate vertex coordinates from indices
     v_coords = underpass_detection.vertex_idx_to_coords(data)
@@ -28,9 +28,12 @@ def main():
     # 3) Get boundary coordinates
     ocs_bounds_coords = underpass_detection.boundary_idx_to_coords(ocs_bounds, v_coords)
 
-    # 4) Generate a shp file of underpass surfaces and area
+    # 4) Calculate average heights for all outer ceiling surfaces
+    surface_heights = underpass_detection.all_outer_ceiling_surface_heights(ocs_bounds_coords)
+
+    # 5) Generate a shp file of underpass surfaces, area, and height attribute
     output_file_nm = args.output_file_nm
-    underpass_detection.output_shp(obj_ocs, ocs_bounds_coords, output_file_nm)
+    underpass_detection.output_shp(obj_ocs, ocs_bounds_coords, surface_heights, measuredHeights, elevations, output_file_nm)
 
 
 if __name__ == "__main__":
